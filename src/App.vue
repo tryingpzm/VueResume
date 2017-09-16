@@ -20,29 +20,21 @@ export default {
 </script>
 
 <style>
-  *{
-  font-family: "Arial","Microsoft
-   YaHei","黑体","宋体",sans-serif;
-  }
   #app{
   border:1px solid;
   display:flex;
   height:100vh;
   flex-direction:column;
   }
-  .topbar{
-
-  }
   main{
   flex:1;
-  border:1px solid;
   display:flex;
-  }
-  main .edit{
-  width:300px;
-  }
-  main .preview{
-   flex:1;
-  }
 
+  }
+  .icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }
 </style>
