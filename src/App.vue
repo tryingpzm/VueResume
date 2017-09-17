@@ -82,7 +82,7 @@ export default {
   #app #outPreview{
     display:none;
   }
-  main{
+  #app main{
   flex:1;
   display:flex;
   }
