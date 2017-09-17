@@ -4,10 +4,21 @@
     <div class="logIn">
       <el-button type="primary">登录</el-button>
       <el-button>注册</el-button>
+      <el-button v-on:click="preview">预览</el-button>
     </div>
   </div>
 </template>
 
+<script>
+  export default{
+      methods:{
+          preview(){
+              console.log("sfa")
+            this.$emit('preview')
+          }
+      }
+  }
+</script>
 <style>
   #topbar{
     display:flex;
@@ -17,6 +28,4 @@
     padding:10px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12)
   }
-
-
 </style>
