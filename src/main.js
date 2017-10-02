@@ -6,13 +6,14 @@ import "normalize.css"
 import "./assets/reset.scss"
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
+import VueRouter from 'vue-router'
 
 Vue.config.productionTip = false
-
-/* eslint-disable no-new */
 Vue.use(ElementUI)
+Vue.use(VueRouter)
+
 new Vue({
   el: '#app',
   template: '<App/>',
-  components: { App }
+  components: { App },
 })
