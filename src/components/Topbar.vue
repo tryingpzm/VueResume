@@ -1,6 +1,6 @@
 <template>
   <div id="topbar">
-    <p>VueResumer</p>
+    <img id="vueLogo" src="//i.loli.net/2017/10/03/59d3a9f2add6d.png" alt="vue.js">
     <div class="logIn">
       <el-button v-if="showLogOnIn" v-on:click="logIn" type="primary">登录</el-button>
       <!--<el-button><router-link to="/Xxx">注册</router-link></el-button>-->
@@ -44,6 +44,11 @@
     font-size:18px;
     padding:10px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12)
+  }
+  #vueLogo{
+    width:40px;
+    height:40px;
+    margin-left:20px;
   }
   .welcome{
     margin-right:10px;

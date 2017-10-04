@@ -14,7 +14,7 @@
         <ProfileEdit v-bind:profile="resume.profile"></ProfileEdit>
       </li>
       <li v-bind:class="{active:currentTab===1}">
-        <ArrayEdit v-bind:items="resume.workHistory" v-bind:head="'工作经历'" v-bind:labels="{company:'公司',content:'工作内容'}"></ArrayEdit>
+        <ArrayEdit v-bind:items="resume.workHistory" v-bind:head="'工作经历'" v-bind:labels="{company:'公司',content:'工作内容',duration:'时间段'}"></ArrayEdit>
       </li>
       <li v-bind:class="{active:currentTab===2}">
         <ArrayEdit v-bind:items="resume.studyHistory" v-bind:head="'学习经历'" v-bind:labels="{school:'学校',duration:'持续时间',degree:'学位'}"></ArrayEdit>

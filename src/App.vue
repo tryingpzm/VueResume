@@ -22,24 +22,29 @@ export default {
       return {
           resume:{
             profile: {
-              name: "",
-              city: "",
-              birth: ""
+              name: "彭志明",
+              sex:"男",
+              work:"前端工程师",
+              city: "广东省广州市",
+              age: "23",
+              assignment:"熟练掌握HTML5、CSS3、JavaScript,了解jQuery库、Vue.js框架，乐于学习新技术",
+              skills:"HTML5 CSS3 JavaScript jQuery Vue"
             },
             workHistory: [
-              {company: "", content: ""}
+              {company: "广东省水利水电第三工程局", content: "测量员",duration:"2016.9-2017.5"}
             ],
             studyHistory:[
-              {school:"",duration:"",degree:""}
+              {school:"武汉大学",duration:"2012.9-2016.6",degree:"学士学位"}
             ],
             projects:[
-              {name:'',content:''}
+              {name:'英雄联盟官网仿站',content:'html+css+原生javascript'},
+              {name:'网易云音乐网页版仿',content:'预加载+函数节流+jQuery+BOM+leancloud(数据库)+requirejs'}
             ],
             awards:[
-              {content:''}
+              {content:"国家乙等奖学金"}
             ],
             contacts:{
-                qq:'',wechat:'',email:'',phone:''
+                qq:'717864916',wechat:'a717864916',email:'717864916@qq.com',phone:'18664366385'
             }
 
           },
@@ -115,7 +120,8 @@ export default {
     display:none
   }
   #app.previewClass #preview{
-    max-width:800px;
+    /*max-width:800px;*/
+    max-width:500px;
     margin:24px auto;
   }
   #app.previewClass #outPreview{
@@ -137,5 +143,4 @@ export default {
     fill: currentColor;
     overflow: hidden;
   }
-
 </style>
