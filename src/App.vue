@@ -5,7 +5,7 @@
         <Edit v-bind:resume="resume" id="edit"/>
         <Preview v-bind:resume="resume" id="preview"/>
     </main>
-    <Xxx id="Xxx" v-bind:initial="initial" v-if="showLog" v-on:hasInitial="hasInitial" v-on:logInSuccess="logInSuccess" v-on:notShowLog="notShowLog" v-bind:logOnIn="logOnIn" v-bind:showLog="showLog" v-bind:count="count"></Xxx>
+    <logOnIn id="logOnIn" v-bind:initial="initial" v-if="showLog" v-on:hasInitial="hasInitial" v-on:logInSuccess="logInSuccess" v-on:notShowLog="notShowLog" v-bind:logOnIn="logOnIn" v-bind:showLog="showLog" v-bind:count="count"></logOnIn>
     <el-button id="outPreview" v-on:click="outPreview">退出预览</el-button>
   </div>
 </template>
@@ -14,10 +14,10 @@
 import Topbar from './components/Topbar'
 import Edit from './components/Edit'
 import Preview from './components/Preview'
-import Xxx from './components/Xxx'
+import logOnIn from './components/logOnIn'
 export default {
   name: 'app',
-  components: {Topbar,Edit,Preview,Xxx},
+  components: {Topbar,Edit,Preview,logOnIn},
   data(){
       return {
           resume:{
@@ -121,8 +121,11 @@ export default {
   }
   #app.previewClass #preview{
     /*max-width:800px;*/
-    max-width:500px;
-    margin:24px auto;
+    margin:0 auto;
+    overflow:auto;
+  }
+  #app.previewClass #preview #contentWrap{
+
   }
   #app.previewClass #outPreview{
     display:block;

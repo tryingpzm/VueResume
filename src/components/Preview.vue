@@ -1,123 +1,126 @@
 <template>
   <div id="preview">
-    <section class="sidebar" v-if="showOrNot(resume.profile)">
-      <i id="avatar"><img src="//i.loli.net/2017/10/04/59d453c782e5e.jpg" alt="头像"></i>
+    <div id="contentWrap">
+      <section class="sidebar" v-if="showOrNot(resume.profile)">
+        <i id="avatar"><img src="//i.loli.net/2017/10/04/59d453c782e5e.jpg" alt="头像"></i>
 
-      <h1 class="name">{{resume.profile.name}}</h1>
-      <p id="aimWork">求职意向：{{resume.profile.work}}</p>
-      <hr>
-      <h3 class="basicInformation">基本信息</h3>
-      <p>
-        <svg class="icon" aria-hidden="true">
-          <use xlink:href="#icon-people"></use>
-        </svg>
-        {{resume.profile.sex}}|{{resume.profile.age}}
-      </p>
-      <p>
-        <svg class="icon" aria-hidden="true">
-          <use xlink:href="#icon-locationmaps"></use>
-        </svg>
-        {{resume.profile.city}}
-      </p>
-      <section v-if="showOrNot(resume.contacts)">
+        <h1 class="name">{{resume.profile.name}}</h1>
+        <p id="aimWork">求职意向：{{resume.profile.work}}</p>
+        <hr>
+        <h3 class="basicInformation">基本信息</h3>
         <p>
           <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-qq"></use>
+            <use xlink:href="#icon-people"></use>
           </svg>
-          qq:{{resume.contacts.qq}}
+          {{resume.profile.sex}}|{{resume.profile.age}}
         </p>
         <p>
           <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-wechaticon"></use>
+            <use xlink:href="#icon-locationmaps"></use>
           </svg>
-          微信:{{resume.contacts.wechat}}
+          {{resume.profile.city}}
         </p>
+        <section v-if="showOrNot(resume.contacts)">
+          <p>
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-qq"></use>
+            </svg>
+            qq:{{resume.contacts.qq}}
+          </p>
+          <p>
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-wechaticon"></use>
+            </svg>
+            微信:{{resume.contacts.wechat}}
+          </p>
+          <p>
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-email"></use>
+            </svg>
+            邮箱: {{resume.contacts.email}}
+          </p>
+          <p>
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-phone1"></use>
+            </svg>
+            手机: {{resume.contacts.phone}}
+          </p>
+          <hr>
+        </section>
+        <!--自我评价 -->
+        <h3>自我评价</h3>
         <p>
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-email"></use>
-          </svg>
-          邮箱: {{resume.contacts.email}}
+          {{resume.profile.assignment}}
         </p>
-        <p>
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-phone1"></use>
-          </svg>
-          手机: {{resume.contacts.phone}}
-        </p>
-        <hr>
       </section>
-      <!--自我评价 -->
-      <h3>自我评价</h3>
-      <p>
-        {{resume.profile.assignment}}
-      </p>
-    </section>
-    <section class="main">
-      <section v-if="showOrNot(resume.studyHistory)">
-        <h3>
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-you"></use>
-          </svg>
-          教育背景
-        </h3>
-        <ul>
-          <li class="spanWrap" v-for="study in resume.studyHistory">
-            <span>{{study.duration}}</span><span>{{study.school}}</span><span>{{study.degree}}</span>
-          </li>
-        </ul>
-        <hr>
+      <section class="main">
+        <section v-if="showOrNot(resume.studyHistory)">
+          <h3>
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-you"></use>
+            </svg>
+            教育背景
+          </h3>
+          <ul>
+            <li class="spanWrap" v-for="study in resume.studyHistory">
+              <span>{{study.duration}}</span><span>{{study.school}}</span><span>{{study.degree}}</span>
+            </li>
+          </ul>
+          <hr>
+        </section>
+        <!--工作经历 -->
+        <section v-if="showOrNot(resume.workHistory)">
+          <h3>
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-you"></use>
+            </svg>
+            工作经历
+          </h3>
+          <ul>
+            <li class="spanWrap" v-for="work in resume.workHistory">
+              <span>{{work.duration}} </span><span>{{work.company}}</span><span>{{work.content}}</span>
+            </li>
+          </ul>
+          <hr>
+        </section>
+        <!--项目经历 -->
+        <section v-if="showOrNot(resume.projects)">
+          <h3>
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-you"></use>
+            </svg>
+            项目经历
+          </h3>
+          <ul>
+            <li class="spanWrap" v-for="project in resume.projects">
+              <h4>{{project.name}}</h4><span>{{project.content}}</span>
+            </li>
+          </ul>
+          <hr>
+        </section>
+        <section v-if="showOrNot(resume.profile.skills)">
+          <h3>
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-you"></use>
+            </svg>
+            个人技能
+          </h3>
+          <p class="spanWrap"><span>{{resume.profile.skills}}</span></p>
+          <hr>
+        </section>
+        <section v-if="showOrNot(resume.awards)">
+          <ul>
+            <li v-for="award in resume.awards">
+              <h3>
+                {{award.content}}
+              </h3>
+            </li>
+          </ul>
+          <hr>
+        </section>
       </section>
-      <!--工作经历 -->
-      <section v-if="showOrNot(resume.workHistory)">
-        <h3>
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-you"></use>
-          </svg>
-          工作经历
-        </h3>
-        <ul>
-          <li class="spanWrap" v-for="work in resume.workHistory">
-            <span>{{work.duration}} </span><span>{{work.company}}</span><span>{{work.content}}</span>
-          </li>
-        </ul>
-        <hr>
-      </section>
-      <!--项目经历 -->
-      <section v-if="showOrNot(resume.projects)">
-        <h3>
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-you"></use>
-          </svg>
-          项目经历
-        </h3>
-        <ul>
-          <li class="spanWrap" v-for="project in resume.projects">
-            <h4>{{project.name}}</h4><span>{{project.content}}</span>
-          </li>
-        </ul>
-        <hr>
-      </section>
-      <section v-if="showOrNot(resume.profile.skills)">
-        <h3>
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-you"></use>
-          </svg>
-          个人技能
-        </h3>
-        <p class="spanWrap"><span>{{resume.profile.skills}}</span></p>
-        <hr>
-      </section>
-      <section v-if="showOrNot(resume.awards)">
-        <ul>
-          <li v-for="award in resume.awards">
-            <h3>
-              {{award.content}}
-            </h3>
-          </li>
-        </ul>
-        <hr>
-      </section>
-    </section>
+    </div>
+
   </div>
 </template>
 
@@ -153,17 +156,18 @@
 </script>
 
 <style>
-  #preview {
+  #preview  {
     flex: 1;
+    overflow:auto;
+  }
+  #preview #contentWrap{
     margin: 16px auto;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.32);
     border-radius: 4px;
     display: flex;
     flex-direction:row;
     max-width: 500px;
-    overflow: auto;
   }
-
   hr {
     margin: 8px 0;
   }

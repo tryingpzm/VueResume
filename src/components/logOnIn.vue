@@ -1,7 +1,7 @@
 <template>
 
-  <div id="Xxx" >
-    <div id="XxxContent">
+  <div id="logOnIn" >
+    <div id="logOnInContent">
       <h1>{{logOnIn}}</h1>
       <el-form :modeml="count">
           <el-input placeholder="username" v-model="count.username"></el-input>
@@ -97,7 +97,7 @@
   }
 </script>
 <style>
-  #Xxx{
+  #logOnIn{
     position: absolute;
     left:0;
     top:0;
@@ -106,7 +106,7 @@
     background: url(https://i.loli.net/2017/10/02/59d2242955a77.jpg) no-repeat center;
     background-size: cover;
   }
-  #XxxContent{
+  #logOnInContent{
     position: fixed;
     top:50%;
     left:50%;
@@ -116,7 +116,7 @@
     z-index: 2;
     background-color: rgba(0,147,237,1);
   }
-  #XxxContent>h1{
+  #logOnInContent>h1{
     text-align: center;
     font-size:30px;
     color:#fff;
